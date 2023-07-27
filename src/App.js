@@ -113,7 +113,7 @@ function App() {
           </h1> */}
           <textarea
             value={options[page]}
-            placeHolder={"percise adjective"}
+            placeHolder={"precise adjective"}
             readOnly
             onClick={() => {
               setPage((page + 1) % 5);
