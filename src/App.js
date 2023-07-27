@@ -9,8 +9,9 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [messageApi, contextHolder] = message.useMessage();
-  const [options, setOptions] = useState(["Combined Words"]);
+  const [options, setOptions] = useState(["", "", "", "", ""]);
   const [page, setPage] = useState(0);
+  const [last, setLast] = useState("");
 
   const [adverb, setAdverb] = useState("");
   const [adjective, setAdjective] = useState("");
@@ -38,33 +39,61 @@ function App() {
     } else setAdjective(event.target.value);
   };
   const handleSubmit = () => {
-    getAPI(adverb + " " + adjective);
+    if (adverb.length < 1 || adjective.length < 1) {
+      message.open({
+        type: "error",
+        content: "Please enter an adverb and an adjective!",
+      });
+    } else {
+      if (last == adverb + " " + adjective) {
+        message.open({
+          type: "error",
+          content: "Use another combo to regenerate!",
+        });
+        return;
+      }
+      getAPI(adverb + " " + adjective);
+      setLast(adverb + " " + adjective);
+    }
   };
   const getAPI = async (value) => {
+    message.open({
+      type: "loading",
+      content: "Finding your words...",
+      duration: 0,
+    });
     try {
       const result = await axios.get(
         "https://to-hell-with-adverbs-api-git-master-akaash.vercel.app/get?query=" +
           value
       );
-      if (result.data.result.split(",").length < 5)
+      if (result.data.result.split(",").length < 5) {
+        message.destroy();
         message.open({
           type: "error",
           content: "Try another combo!",
         });
-      else setOptions(result.data.result.split(","));
+        return;
+      } else setOptions(result.data.result.split(","));
     } catch (e) {
       console.log(e);
       setOptions("Error");
     }
+    message.destroy();
+    message.open({
+      duration: 7,
+      type: "success",
+      content: "Click the result to cycle through options",
+    });
   };
   return (
     <div className="App">
       <header className="App-header">
-        <h2> "the road to hell is paved with adverbs" </h2>
+        <h1 className="title"> "the road to hell is paved with adverbs" </h1>
         <textarea value={adverb} placeHolder={"adverb"} onChange={handleChange}>
           {" "}
         </textarea>
-        <h1> + </h1>
+        <h1 className="space"> + </h1>
         <textarea
           value={adjective}
           placeHolder={"adjective"}
@@ -72,26 +101,34 @@ function App() {
         >
           {" "}
         </textarea>
-        <h1> = </h1>
-        <Row>
-          <h1
+        <h1 className="space"> = </h1>
+        <div className="result">
+          {/* <h1
             onClick={() => {
               setPage((page + 1) % 5);
             }}
           >
             {" "}
             {"< "}{" "}
-          </h1>
-          <h1> {options[page]} </h1>
-          <h1
+          </h1> */}
+          <textarea
+            value={options[page]}
+            placeHolder={"percise adjective"}
+            readOnly
+            onClick={() => {
+              setPage((page + 1) % 5);
+            }}
+          ></textarea>
+          <h1> </h1>
+          {/* <h1
             onClick={() => {
               setPage((page + 4) % 5);
             }}
           >
             {" "}
             {" >"}{" "}
-          </h1>
-        </Row>
+          </h1> */}
+        </div>
         <Button onClick={handleSubmit}>Generate</Button>
       </header>
     </div>

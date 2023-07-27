@@ -16,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #00008b;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,8 +26,45 @@
   color: white;
 }
 
+.title {
+  margin-left: 20vw;
+  margin-right: 20vw;
+
+  margin-bottom: 10vh;
+  /* font-family: "Brush Script MT", cursive; */
+  font-weight: lighter;
+}
+
+.space {
+  font-weight: bolder;
+  margin-bottom: 10pt;
+  margin-top: 10pt;
+}
+
 .App-header textarea {
-  color: black;
+  margin-top: 0;
+  color: #00008b;
+  font-weight: lighter;
+  font-size: 1.5em;
+  width: 10em;
+  height: 1.5em;
+  align-items: center;
+  resize: none;
+  text-align: center;
+}
+
+.result {
+  /* font-size: 1.5em;
+  width: 10em; */
+  flex-direction: row;
+  /* height: 1.5em;
+  font-weight: lighter;
+  font-size: 1.5em;
+  width: 10em;
+  height: 1.5em;
+  align-items: center;
+  resize: none;
+  text-align: center; */
 }
 .App-link {
   color: #61dafb;
