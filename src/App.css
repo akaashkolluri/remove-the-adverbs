@@ -29,8 +29,8 @@
 .title {
   margin-left: 20vw;
   margin-right: 20vw;
-
-  margin-bottom: 10vh;
+  margin-top: -5vh;
+  margin-bottom: 5vh;
   /* font-family: "Brush Script MT", cursive; */
   font-weight: lighter;
 }
