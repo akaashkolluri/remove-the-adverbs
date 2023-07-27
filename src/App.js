@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [messageApi, contextHolder] = message.useMessage();
-  const [options, setOptions] = useState("Loading...");
+  const [options, setOptions] = useState(["Combined Words"]);
   const [page, setPage] = useState(0);
 
   const [adverb, setAdverb] = useState("");
@@ -46,8 +46,12 @@ function App() {
         "https://to-hell-with-adverbs-api-git-master-akaash.vercel.app/get?query=" +
           value
       );
-
-      setOptions(result.data.result.split(","));
+      if (result.data.result.split(",").length < 5)
+        message.open({
+          type: "error",
+          content: "Try another combo!",
+        });
+      else setOptions(result.data.result.split(","));
     } catch (e) {
       console.log(e);
       setOptions("Error");
@@ -56,11 +60,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <textarea value={adverb} onChange={handleChange}>
+        <textarea value={adverb} placeHolder={"adverb"} onChange={handleChange}>
           {" "}
         </textarea>
         <h1> + </h1>
-        <textarea value={adjective} onChange={handleChange2}>
+        <textarea
+          value={adjective}
+          placeHolder={"adjective"}
+          onChange={handleChange2}
+        >
           {" "}
         </textarea>
         <h1> = </h1>
