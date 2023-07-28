@@ -71,7 +71,7 @@
   margin-right: 20vw;
   margin-top: -5vh;
   margin-bottom: 5vh;
-  font-size: 20pt;
+  font-size: calc(8px + 2vmin);
   /* font-family: "Brush Script MT", cursive; */
   font-weight: lighter;
 }
