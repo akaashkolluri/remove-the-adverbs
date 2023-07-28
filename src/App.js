@@ -57,13 +57,13 @@ function App() {
     if (adverb.length < 1 || adjective.length < 1) {
       message.open({
         type: "error",
-        content: "Please enter an adverb and an adjective!",
+        content: "Please enter an adverb and an adjective/verb!",
       });
     } else {
       if (last == adverb + " " + adjective) {
         message.open({
           type: "error",
-          content: "Use another combo to regenerate!",
+          content: "Not a real phrase. Try another!",
         });
         return;
       }
@@ -93,7 +93,7 @@ function App() {
           content: "Try another combo!",
         });
         return;
-      } else setOptions(result.data.result.split(","));
+      } else setOptions(result.data.result.replace(", none", "").split(","));
     } catch (e) {
       console.log(e);
       setOptions("Error");
@@ -108,7 +108,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="title"> "the road to hell is paved with adverbs" </h1>
+        <h1 className="title"> remove the adverbs </h1>
+        <h2 className="subtitle"> vocabulary trainer </h2>
         <textarea value={adverb} placeHolder={"adverb"} onChange={handleChange}>
           {" "}
         </textarea>
@@ -132,14 +133,14 @@ function App() {
           ></textarea>
           <h1> </h1>
         </div>
-        <Button onClick={handleSubmit}>Generate</Button>
+        <Button onClick={handleSubmit}>generate</Button>
         <Modal
           title="Support and Review"
           open={isModalOpen}
           onOk={handleOk}
           onCancel={handleCancel}
         >
-          <p>Do you like "to hell with adverbs"?</p>
+          <p>Do you like "Remove the Adverbs"?</p>
           <p>
             Currently, this application relies on the OpenAI API to create
             ideal, contextual answers for precise vocabulary. This API is costly
@@ -152,6 +153,14 @@ function App() {
           <p></p>
         </Modal>
       </header>
+      <div className={"footer"}>
+        <a href={"https://github.com/akaashkolluri"}>
+          {" "}
+          made by Akaash Kolluri{" "}
+        </a>{" "}
+        | <a> review </a> |{" "}
+        <a href={"https://www.buymeacoffee.com/akaashkolluri"}> support </a>
+      </div>
     </div>
   );
 }

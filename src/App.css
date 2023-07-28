@@ -17,7 +17,7 @@
 
 .App-header {
   background-color: #00008b;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,11 +26,52 @@
   color: white;
 }
 
+.footer {
+  background-color: #00008b;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
+  /* border-top: 1px solid #010158; */
+
+  flex-direction: row;
+}
+
+.footer a {
+  margin: 8px;
+  color: white;
+  text-decoration: none;
+}
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer a:visited {
+  color: white;
+  text-decoration: none;
+}
+
 .title {
   margin-left: 20vw;
   margin-right: 20vw;
   margin-top: -5vh;
   margin-bottom: 5vh;
+  /* font-family: "Brush Script MT", cursive; */
+  font-weight: lighter;
+}
+
+.subtitle {
+  margin-left: 20vw;
+  margin-right: 20vw;
+  margin-top: -5vh;
+  margin-bottom: 5vh;
+  font-size: 20pt;
   /* font-family: "Brush Script MT", cursive; */
   font-weight: lighter;
 }
