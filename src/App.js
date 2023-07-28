@@ -18,7 +18,7 @@ function App() {
   const [adjective, setAdjective] = useState("");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModal2Open, setIsModal2Open] = useState(false);
+  const [isModal2Open, setIsModal2Open] = useState(true);
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -111,6 +111,7 @@ function App() {
       console.log(e);
       setOptions("Error");
     }
+    setPage(0);
     message.destroy();
     message.open({
       duration: 7,
@@ -176,21 +177,31 @@ function App() {
         </Modal>
 
         <Modal
-          title="Support and Review"
+          title="Remove the Adverbs"
           open={isModal2Open}
           onOk={handleOk2}
           onCancel={handleCancel2}
         >
-          <p>Do you like "Remove the Adverbs"?</p>
           <p>
-            Currently, this application relies on the OpenAI API to create
-            ideal, contextual answers for precise vocabulary. This API is costly
-            and charges for every use.
+            Remove the adverbs is a vocabulary trainer that helps you find
+            replacements to avoid unnecessary adverbs in your writing.
           </p>
           <p>
-            Please consider supporting me <a> here </a>, so that I can keep this
-            application free for everyone!{" "}
+            Adverbs are parts of speech that modify verbs, adjectives, or other
+            adverbs. While sometimes helpful, they are often unnecessary and can
+            be replaced with more precise words to create forceful writing.
           </p>
+          <p>Some of the worst offenders very, really, quite, extremely. </p>
+          <p>
+            For example, "quick-witted" is more concise than "very smart", or
+            "chuckle" is more forceful "quitely laugh"
+          </p>
+          <p>
+            To use this tool, input an adverb and an adjective or verb, and then
+            click generate. Precise replacments will be generated that you can
+            click through.
+          </p>
+          <p></p>
           <p></p>
         </Modal>
       </header>
