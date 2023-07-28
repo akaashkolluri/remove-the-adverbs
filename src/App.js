@@ -3,7 +3,7 @@ import "./App.css";
 // import "antd/dist/antd.css";
 import "antd/dist/reset.css";
 import axios from "axios";
-import { Input, message, Button, Row } from "antd";
+import { Input, message, Button, Row, Modal } from "antd";
 
 import { useState, useEffect } from "react";
 
@@ -12,9 +12,24 @@ function App() {
   const [options, setOptions] = useState(["", "", "", "", ""]);
   const [page, setPage] = useState(0);
   const [last, setLast] = useState("");
+  const [uses, setUses] = useState(0);
 
   const [adverb, setAdverb] = useState("");
   const [adjective, setAdjective] = useState("");
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     // getAPI("madly mean");
@@ -62,6 +77,10 @@ function App() {
       content: "Finding your words...",
       duration: 0,
     });
+    setUses(uses + 1);
+    if (uses == 3) {
+      showModal();
+    }
     try {
       const result = await axios.get(
         "https://to-hell-with-adverbs-api-git-master-akaash.vercel.app/get?query=" +
@@ -96,40 +115,42 @@ function App() {
         <h1 className="space"> + </h1>
         <textarea
           value={adjective}
-          placeHolder={"adjective"}
+          placeHolder={"adjective/verb"}
           onChange={handleChange2}
         >
           {" "}
         </textarea>
         <h1 className="space"> = </h1>
         <div className="result">
-          {/* <h1
-            onClick={() => {
-              setPage((page + 1) % 5);
-            }}
-          >
-            {" "}
-            {"< "}{" "}
-          </h1> */}
           <textarea
             value={options[page]}
-            placeHolder={"precise adjective"}
+            placeHolder={"precise term"}
             readOnly
             onClick={() => {
               setPage((page + 1) % 5);
             }}
           ></textarea>
           <h1> </h1>
-          {/* <h1
-            onClick={() => {
-              setPage((page + 4) % 5);
-            }}
-          >
-            {" "}
-            {" >"}{" "}
-          </h1> */}
         </div>
         <Button onClick={handleSubmit}>Generate</Button>
+        <Modal
+          title="Support and Review"
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+        >
+          <p>Do you like "to hell with adverbs"?</p>
+          <p>
+            Currently, this application relies on the OpenAI API to create
+            ideal, contextual answers for precise vocabulary. This API is costly
+            and charges for every use.
+          </p>
+          <p>
+            Please consider supporting me <a> here </a>, so that I can keep this
+            application free for everyone!{" "}
+          </p>
+          <p></p>
+        </Modal>
       </header>
     </div>
   );
