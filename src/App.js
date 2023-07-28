@@ -4,7 +4,7 @@ import "./App.css";
 import "antd/dist/reset.css";
 import axios from "axios";
 import { Input, message, Button, Row, Modal } from "antd";
-
+import { BiHelpCircle } from "react-icons/bi";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
   const [adjective, setAdjective] = useState("");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModal2Open, setIsModal2Open] = useState(false);
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -29,6 +30,18 @@ function App() {
 
   const handleCancel = () => {
     setIsModalOpen(false);
+  };
+
+  const showModal2 = () => {
+    setIsModal2Open(true);
+  };
+
+  const handleOk2 = () => {
+    setIsModal2Open(false);
+  };
+
+  const handleCancel2 = () => {
+    setIsModal2Open(false);
   };
 
   useEffect(() => {
@@ -109,7 +122,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="title"> remove the adverbs </h1>
-        <h2 className="subtitle"> vocabulary trainer </h2>
+        <h2 className="subtitle">
+          {" "}
+          vocabulary trainer{" "}
+          {/* <BiHelpCircle
+            style={{ paddingTop: 20, paddingBottom: -10, fontSize: 50 }}
+          /> */}
+        </h2>
+
         <textarea value={adverb} placeHolder={"adverb"} onChange={handleChange}>
           {" "}
         </textarea>
@@ -124,6 +144,7 @@ function App() {
         <h1 className="space"> = </h1>
         <div className="result">
           <textarea
+            style={{ backgroundColor: "#00008b40", color: "white" }}
             value={options[page]}
             placeHolder={"precise term"}
             readOnly
@@ -134,6 +155,7 @@ function App() {
           <h1> </h1>
         </div>
         <Button onClick={handleSubmit}>generate</Button>
+
         <Modal
           title="Support and Review"
           open={isModalOpen}
@@ -152,7 +174,27 @@ function App() {
           </p>
           <p></p>
         </Modal>
+
+        <Modal
+          title="Support and Review"
+          open={isModal2Open}
+          onOk={handleOk2}
+          onCancel={handleCancel2}
+        >
+          <p>Do you like "Remove the Adverbs"?</p>
+          <p>
+            Currently, this application relies on the OpenAI API to create
+            ideal, contextual answers for precise vocabulary. This API is costly
+            and charges for every use.
+          </p>
+          <p>
+            Please consider supporting me <a> here </a>, so that I can keep this
+            application free for everyone!{" "}
+          </p>
+          <p></p>
+        </Modal>
       </header>
+
       <div className={"footer"}>
         <a href={"https://github.com/akaashkolluri"}>
           {" "}
