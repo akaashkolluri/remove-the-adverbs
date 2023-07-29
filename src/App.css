@@ -29,7 +29,13 @@
 .startModal {
   margin-top: -10vh;
 }
+.startModal p {
+  font-size: calc(7px + 1.1vmin);
+}
 
+.startModal li {
+  font-size: calc(7px + 1.1vmin);
+}
 .footer {
   background-color: #00008b;
   min-height: 10vh;
