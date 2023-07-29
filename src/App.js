@@ -6,6 +6,7 @@ import axios from "axios";
 import { Input, message, Button, Row, Modal } from "antd";
 import { BiHelpCircle } from "react-icons/bi";
 import { useState, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [messageApi, contextHolder] = message.useMessage();
@@ -230,6 +231,7 @@ function App() {
         {/* | <a> review </a> |{" "} */}
         <a href={"https://www.buymeacoffee.com/akaashkolluri"}> support </a>
       </div>
+      <Analytics />
     </div>
   );
 }
