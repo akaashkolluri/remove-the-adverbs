@@ -76,7 +76,7 @@ function App() {
       if (last == adverb + " " + adjective) {
         message.open({
           type: "error",
-          content: "Not a real phrase. Try another!",
+          content: "Please use a new phrase!",
         });
         return;
       }
@@ -103,7 +103,7 @@ function App() {
         message.destroy();
         message.open({
           type: "error",
-          content: "Try another combo!",
+          content: "We couldn't process this phrase. Try another!",
         });
         return;
       } else setOptions(result.data.result.replace(", none", "").split(","));
