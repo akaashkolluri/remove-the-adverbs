@@ -223,11 +223,11 @@ function App() {
       </header>
 
       <div className={"footer"}>
-        <a href={"https://github.com/akaashkolluri"}>
+        {/* <a href={"https://github.com/akaashkolluri"}>
           {" "}
           made by Akaash Kolluri{" "}
-        </a>{" "}
-        | <a> review </a> |{" "}
+        </a>{" "} */}
+        {/* | <a> review </a> |{" "} */}
         <a href={"https://www.buymeacoffee.com/akaashkolluri"}> support </a>
       </div>
     </div>
