@@ -26,6 +26,10 @@
   color: white;
 }
 
+.startModal {
+  margin-top: -10vh;
+}
+
 .footer {
   background-color: #00008b;
   min-height: 10vh;

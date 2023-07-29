@@ -158,22 +158,24 @@ function App() {
         <Button onClick={handleSubmit}>generate</Button>
 
         <Modal
-          title="Support and Review"
+          title="Support"
           open={isModalOpen}
           onOk={handleOk}
           onCancel={handleCancel}
         >
-          <p>Do you like "Remove the Adverbs"?</p>
+          <p>Do you like "Remove The Adverbs"?</p>
+
           <p>
-            Currently, this application relies on the OpenAI API to create
-            ideal, contextual answers for precise vocabulary. This API is costly
+            This application currently depends on OpenAI's GPT API to create
+            ideal, contextual answers for precise vocabulary. The API is costly
             and charges for every use.
           </p>
+
           <p>
-            Please consider supporting me <a> here </a>, so that I can keep this
-            application free for everyone!{" "}
+            To maintain this application's availability and keep it free for all
+            writers, please consider supporting me{" "}
+            <a href={"https://www.buymeacoffee.com/akaashkolluri"}>here</a>.
           </p>
-          <p></p>
         </Modal>
 
         <Modal
@@ -181,25 +183,39 @@ function App() {
           open={isModal2Open}
           onOk={handleOk2}
           onCancel={handleCancel2}
+          className="startModal"
         >
           <p>
-            Remove the adverbs is a vocabulary trainer that helps you find
-            replacements to avoid unnecessary adverbs in your writing.
+            Welcome to "Remove The Adverbs" – your personal vocabulary trainer!
           </p>
           <p>
-            Adverbs are parts of speech that modify verbs, adjectives, or other
-            adverbs. While sometimes helpful, they are often unnecessary and can
-            be replaced with more precise words to create forceful writing.
-          </p>
-          <p>Some of the worst offenders very, really, quite, extremely. </p>
-          <p>
-            For example, "quick-witted" is more concise than "very smart", or
-            "chuckle" is more forceful "quitely laugh"
+            This AI-powered tool aims to enhance your writing by helping you
+            find alternatives to the adverbs that show up in your writing.
           </p>
           <p>
-            To use this tool, input an adverb and an adjective or verb, and then
-            click generate. Precise replacments will be generated that you can
-            click through.
+            Adverbs are a part of speech that modify verbs, adjectives, or other
+            adverbs. Though sometimes useful, they can often weigh down your
+            writing and lack precision. Key adverbs that rob writing of vigor:
+            "very," "really," "quite," and "extremely."
+          </p>
+          <p>
+            By replacing adverb-adjective or adverb-verb phrases with a single
+            word, your writing becomes more forceful, vibrant, and concise. For
+            example:
+          </p>
+          <ul>
+            <li>very smart -&gt; quick-witted</li>
+            <li>quietly laugh -&gt; chuckle</li>
+            <li>slightly happy -&gt; content</li>
+          </ul>
+          <p>
+            Using our tool is easy. Just enter an adverb along with an adjective
+            or verb, and click "generate." AI will generate precise and engaging
+            replacements. Click on the term to cycle to new options.
+          </p>
+          <p>
+            If you like "Remove The Adverbs", please consider supporting us
+            using the support button at the bottom of the page!
           </p>
           <p></p>
           <p></p>
