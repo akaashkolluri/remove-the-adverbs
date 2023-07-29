@@ -175,7 +175,7 @@ function App() {
           <p>
             To maintain this application's availability and keep it free for all
             writers, please consider supporting me{" "}
-            <a href={"https://www.buymeacoffee.com/akaashkolluri"}>here</a>.
+            <a href={"https://www.buymeacoffee.com/aakk"}>here</a>.
           </p>
         </Modal>
 
@@ -230,7 +230,7 @@ function App() {
           made by Akaash Kolluri{" "}
         </a>{" "} */}
         {/* | <a> review </a> |{" "} */}
-        <a href={"https://www.buymeacoffee.com/akaashkolluri"}> support </a>
+        <a href={"https://www.buymeacoffee.com/aakk"}> support </a>
       </div>
       <Analytics />
     </div>
