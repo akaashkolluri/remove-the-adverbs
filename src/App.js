@@ -191,7 +191,7 @@ function App() {
           onCancel={handleCancel2}
           className="startModal"
           footer={[
-            <Button key="Okay" type="primary" onClick={handleOk}>
+            <Button key="Okay" type="primary" onClick={handleOk2}>
               Close
             </Button>,
           ]}
@@ -226,8 +226,8 @@ function App() {
             options.
           </p>
           <p>
-            If you like "Remove The Adverbs", please consider supporting us
-            using the support button at the bottom of the page!
+            If you like "Remove The Adverbs", please consider supporting using
+            the support button at the bottom of the page!
           </p>
           <p></p>
           <p></p>
