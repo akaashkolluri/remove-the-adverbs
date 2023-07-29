@@ -109,8 +109,10 @@ function App() {
         return;
       } else setOptions(result.data.result.replace(", none", "").split(","));
     } catch (e) {
-      console.log(e);
-      setOptions("Error");
+      message.open({
+        type: "error",
+        content: "There was an issue. Try again!",
+      });
     }
     setPage(0);
     message.destroy();
