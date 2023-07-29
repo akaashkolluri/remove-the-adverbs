@@ -190,8 +190,8 @@ function App() {
             Welcome to "Remove The Adverbs" – your personal vocabulary trainer!
           </p>
           <p>
-            This AI-powered tool aims to enhance your writing by helping you
-            find alternatives to the adverbs that show up in your writing.
+            This tool aims to enhance your writing by helping you find
+            alternatives to the adverbs that show up in your writing.
           </p>
           <p>
             Adverbs are a part of speech that modify verbs, adjectives, or other
@@ -211,8 +211,9 @@ function App() {
           </ul>
           <p>
             Using our tool is easy. Just enter an adverb along with an adjective
-            or verb, and click "generate." AI will generate precise and engaging
-            replacements. Click on the term to cycle to new options.
+            or verb, and click "generate." The application will then generate
+            precise and engaging replacements. Click on the term to cycle to new
+            options.
           </p>
           <p>
             If you like "Remove The Adverbs", please consider supporting us
