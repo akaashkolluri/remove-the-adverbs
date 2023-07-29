@@ -30,11 +30,11 @@
   margin-top: -10vh;
 }
 .startModal p {
-  font-size: calc(7px + 1.2vmin);
+  font-size: calc(7px + 1vmin);
 }
 
 .startModal li {
-  font-size: calc(7px + 1.1vmin);
+  font-size: calc(7px + 1vmin);
 }
 .footer {
   background-color: #00008b;

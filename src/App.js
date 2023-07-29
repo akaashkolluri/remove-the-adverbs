@@ -163,6 +163,11 @@ function App() {
           open={isModalOpen}
           onOk={handleOk}
           onCancel={handleCancel}
+          footer={[
+            <Button key="Okay" type="primary" onClick={handleOk}>
+              Close
+            </Button>,
+          ]}
         >
           <p>Do you like "Remove The Adverbs"?</p>
 
@@ -185,6 +190,11 @@ function App() {
           onOk={handleOk2}
           onCancel={handleCancel2}
           className="startModal"
+          footer={[
+            <Button key="Okay" type="primary" onClick={handleOk}>
+              Close
+            </Button>,
+          ]}
         >
           <p>
             Welcome to "Remove The Adverbs" – your personal vocabulary trainer!
