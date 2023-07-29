@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  /* font-family: "Varela Round"; */
 }
 
 .App-logo {
@@ -16,8 +17,20 @@
 }
 
 .App-header {
-  background-color: #00008b;
-  min-height: 90vh;
+  background-color: cornflowerblue;
+  /* background: repeating-conic-gradient(#19a7bd 0%, #2493b2 1%, #00748b 2%);*/
+  /* background: linear-gradient(
+      217deg,
+      rgba(0, 72, 255, 0.8),
+      rgba(70, 138, 221, 0) 70.71%
+    ),
+    /* linear-gradient(217deg, rgba(0, 72, 255, 0.8), rgba(82, 168, 221, 0) 20.71%),
+    linear-gradient(127deg, rgba(0, 225, 255, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(18deg, rgba(94, 94, 236, 0.8), rgba(0, 0, 255, 0) 70.71%), 
+      radial-gradient(at 10% 20%, #74daf7 10%, #07427d 30%),
+    radial-gradient(at 100% 60%, #0a886d 10%, #07427d 80%),
+    radial-gradient(at 30% 40%, #74daf7 10%, #07427d 30%); */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,15 +43,16 @@
   margin-top: -10vh;
 }
 .startModal p {
-  font-size: calc(7px + 1vmin);
+  font-size: calc(7px + 1.1vmin);
 }
 
 .startModal li {
-  font-size: calc(7px + 1vmin);
+  font-size: calc(7px + 1.1vmin);
 }
 .footer {
-  background-color: #00008b;
+  background-color: #00000000;
   min-height: 10vh;
+  margin-top: -10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,6 +116,10 @@
   align-items: center;
   resize: none;
   text-align: center;
+}
+
+.App-header textarea {
+  font-weight: lighter;
 }
 
 .result {

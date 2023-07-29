@@ -148,7 +148,7 @@ function App() {
         <h1 className="space"> = </h1>
         <div className="result">
           <textarea
-            style={{ backgroundColor: "#00008b40", color: "white" }}
+            style={{ backgroundColor: "#00000000", color: "white" }}
             value={options[page]}
             placeHolder={"precise term"}
             readOnly
@@ -208,8 +208,8 @@ function App() {
           <p>
             Adverbs are a part of speech that modify verbs, adjectives, or other
             adverbs. Though sometimes useful, they can often weigh down your
-            writing and lack precision. Key adverbs that rob writing of vigor:
-            "very," "really," "quite," and "extremely."
+            writing and lack precision. Some adverbs that often rob writing of
+            vigor: "very," "really," "quite," and "extremely."
           </p>
           <p>
             By replacing adverb-adjective or adverb-verb phrases with a single
