@@ -92,9 +92,9 @@ function App() {
       duration: 0,
     });
     setUses(uses + 1);
-    if (uses == 3) {
-      showModal();
-    }
+    // if (uses == 3) {
+    //   showModal();
+    // }
     try {
       const result = await axios.get(
         "https://to-hell-with-adverbs-api-git-master-akaash.vercel.app/get?query=" +
@@ -227,10 +227,10 @@ function App() {
             precise and engaging replacements. Click on the term to cycle to new
             options.
           </p>
-          <p>
+          {/* <p>
             If you like "Remove The Adverbs", please consider supporting using
             the support button at the bottom of the page!
-          </p>
+          </p> */}
           <p></p>
           <p></p>
         </Modal>
@@ -242,7 +242,7 @@ function App() {
           made by Akaash Kolluri{" "}
         </a>{" "} */}
         {/* | <a> review </a> |{" "} */}
-        <a href={"https://www.buymeacoffee.com/aakk"}> support </a>
+        {/* <a href={"https://www.buymeacoffee.com/aakk"}> support </a> */}
       </div>
       <Analytics />
     </div>
